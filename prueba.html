@@ -10,6 +10,84 @@
     <link rel="icon" type= "image/png" href="plat.png">
 
 </head>
+<style>
+    .carusel {
+        width: 100%; /* Ancho*/
+        overflow:scroll; /* Genera un Scroll al pasar por los obejtos en lista */
+        padding: 10px;
+        position: relative; /* transmite la misma posicion para todos */
+    }
+    .carusel__contenedor {
+        white-space: none;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+    .carusel-item {
+     width: 200px;
+     height: 250px;
+     border-radius: 20px;
+     overflow: hidden;
+     margin-right: 10px;
+     display: inline-block; /* coloca el display en linea */
+     cursor: pointer;
+     transition: 450ms all; /* cambia la transision en milisegundos al aplicarle all lo aplica a todod */
+     transform-origin: center left; /* cuando se genera la transformacion la alinea al centro y a la derecha */
+     position: relative;
+    }
+    .carusel-item:hover ~.carusel-item{
+        transform: translate3d(100px,0,0); /*realiza una transformacion animada */
+    }
+    
+    .carusel__contenedor:hover .carusel-item {
+        opacity: 0.3;/*aplica una opacidad al objeto */
+    }
+    .carusel__contenedor:hover .carusel-item:hover {
+        transform: scale(1.5); /* Sirve para cambiar la escala de la transformacion 3d */
+        opacity: 0.99;
+    }
+.carusel-item_img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover; /*sirve para colocar el tamano original de la imagen */
+}
+
+.carusel-item_detalles {
+
+    background:linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.0) 100%); /*Genera un degradado para todas las lineas desde el mas obscuro al mas claro */
+    font-size: 10px; /*tamano de la letra */
+    opacity: 0;
+    transition: 450ms opacity;/*genera opacidad al momento de usar linear-gradient*/
+    padding: 10px; /* margen interno entre los iconos */
+    position: absolute;
+    top: 180 px;  /*cambiar la posicion de los iconos dejandolos fijos*/
+    left: 0;  /*cambiar la posicion de los iconos dejandolos fijos*/
+    right: 0;  /*cambiar la posicion de los iconos dejandolos fijos*/
+    bottom: 0; /*cambiar la posicion de los iconos dejandolos fijos*/
+}
+
+.carusel-item_detalles:hover {
+    opacity: 0.99;
+}
+.carusel-item_detalles img {
+    height: 20px;
+    width: 20px;
+}
+.carusel-item_detalles p {
+    margin: 0px;
+}
+
+.carusel-item_detalles--titulo {
+    font-weight: bold;
+    color: white;
+}
+.carusel-item_detalles--subtitulo {
+    font-size: 8px;
+    color: white;
+}
+.carusel-item_detalles--titulo:hover{
+    opacity: 0.99   ;
+}
+</style>
 <body>
     <header class="header">
          <img class="header__img" src="logoplazti.png" alt="Logo Platzi Video">
@@ -106,6 +184,10 @@
 
         </section>
     </section>
+
+
+
+
     
 </body>
 </html>
