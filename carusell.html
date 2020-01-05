@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type= "image/png" href="plat.png">
+    <title>Carusell</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+    }
+    .carusel {
+        width: 100%; /* Ancho*/
+        overflow:scroll; /* Genera un Scroll al pasar por los obejtos en lista */
+        padding: 30px;
+        position: relative; /* transmite la misma posicion para todos */
+    }
+    .carusel__contenedor {
+        white-space: none;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+    .carusel-item {
+     width: 200px;
+     height: 250px;
+     border-radius: 20px;
+     overflow: hidden;
+     margin-right: 10px;
+     display: inline-block; /* coloca el display en linea */
+     cursor: pointer;
+     transition: 450ms all; /* cambia la transision en milisegundos al aplicarle all lo aplica a todod */
+     transform-origin: center left; /* cuando se genera la transformacion la alinea al centro y a la derecha */
+    }
+    .carusel-item:hover ~.carusel-item{
+        transform: translate3d(100px,0,0); /*realiza una transformacion animada */
+    }
+    
+    .carusel__contenedor:hover .carusel-item {
+        opacity: 0.3;/*aplica una opacidad al objeto */
+    }
+    .carusel__contenedor:hover .carusel-item:hover {
+        transform: scale(1.5); /* Sirve para cambiar la escala de la transformacion 3d */
+        opacity: 0.99;
+    }
+.carusel-item_img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover; /*sirve para colocar el tamano original de la imagen */
+}
+
+.carusel-item_detalles {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.0) 100%); /*Genera un degradado para todas las lineas desde el mas obscuro al mas claro */
+}
+
+</style>
+<body>
+    <section class="carusel">
+        <div class="carusel__contenedor">
+            <div class="carusel-item">
+                <img class="carusel-item_img" src="cascada.jpg" alt="Cascada">
+                <div class="carusel-item_detalles">
+                    <img src="play.png" alt="Play">
+                    <img src="plus.png" alt="Plus">
+                </div>
+                <p class="carusel-item_detalles--titulo">Cascada</p>
+                <p class="carusel-item_detalles--subtitulo">Estadados Unidos</p>
+            </div>
+            <div class="carusel-item">
+            </div>
+            <div class="carusel-item">
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
