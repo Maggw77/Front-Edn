@@ -32,6 +32,7 @@
      cursor: pointer;
      transition: 450ms all; /* cambia la transision en milisegundos al aplicarle all lo aplica a todod */
      transform-origin: center left; /* cuando se genera la transformacion la alinea al centro y a la derecha */
+     position: relative;
     }
     .carusel-item:hover ~.carusel-item{
         transform: translate3d(100px,0,0); /*realiza una transformacion animada */
@@ -51,27 +52,116 @@
 }
 
 .carusel-item_detalles {
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.0) 100%); /*Genera un degradado para todas las lineas desde el mas obscuro al mas claro */
+
+    background:linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.0) 100%); /*Genera un degradado para todas las lineas desde el mas obscuro al mas claro */
+    font-size: 10px; /*tamano de la letra */
+    opacity: 0;
+    transition: 450ms opacity;/*genera opacidad al momento de usar linear-gradient*/
+    padding: 10px; /* margen interno entre los iconos */
+    position: absolute;
+    top: 180 px;  /*cambiar la posicion de los iconos dejandolos fijos*/
+    left: 0;  /*cambiar la posicion de los iconos dejandolos fijos*/
+    right: 0;  /*cambiar la posicion de los iconos dejandolos fijos*/
+    bottom: 0; /*cambiar la posicion de los iconos dejandolos fijos*/
 }
 
+.carusel-item_detalles:hover {
+    opacity: 0.99;
+}
+.carusel-item_detalles img {
+    height: 20px;
+    width: 20px;
+}
+.carusel-item_detalles p {
+    margin: 0px;
+}
+
+.carusel-item_detalles--titulo {
+    font-weight: bold;
+    color: white;
+}
+.carusel-item_detalles--subtitulo {
+    font-size: 8px;
+    color: white;
+}
+.carusel-item_detalles--titulo:hover{
+    opacity: 0.99   ;
+}
+    
 </style>
 <body>
     <section class="carusel">
-        <div class="carusel__contenedor">
+        <section class="carusel__contenedor">
             <div class="carusel-item">
-                <img class="carusel-item_img" src="cascada.jpg" alt="Cascada">
-                <div class="carusel-item_detalles">
-                    <img src="play.png" alt="Play">
-                    <img src="plus.png" alt="Plus">
-                </div>
-                <p class="carusel-item_detalles--titulo">Cascada</p>
-                <p class="carusel-item_detalles--subtitulo">Estadados Unidos</p>
+                <img class="carusel-item_img" src="Tiendas Europeas.jpg" alt="Tiendas en Europa">
+              <div class="carusel-item_detalles">
+                   <div>
+                     <img src="play.png" alt="Play">
+                     <img src="plus.png" alt="Plus">
+                   </div>
+                    <p class="carusel-item_detalles--titulo">Tiendas Europeas</p>
+                    <p class="carusel-item_detalles--subtitulo">Europa</p>
+               </div>
             </div>
             <div class="carusel-item">
+                <img class="carusel-item_img" src="bosque.jpg" alt="Bosque Nevado">
+              <div class="carusel-item_detalles">
+                   <div>
+                     <img src="play.png" alt="Play">
+                     <img src="plus.png" alt="Plus">
+                   </div>
+                    <p class="carusel-item_detalles--titulo">Bosque nevado</p>
+                    <p class="carusel-item_detalles--subtitulo">Canada</p>
+               </div>
             </div>
             <div class="carusel-item">
+                <img class="carusel-item_img" src="2020.jpg" alt="Comienzo">
+              <div class="carusel-item_detalles">
+                   <div>
+                     <img src="play.png" alt="Play">
+                     <img src="plus.png" alt="Plus">
+                   </div>
+                    <p class="carusel-item_detalles--titulo">New York</p>
+                    <p class="carusel-item_detalles--subtitulo">Estadados Unidos</p>
+               </div>
             </div>
-        </div>
+            <div class="carusel-item">
+                <img class="carusel-item_img" src="hotel.jpg" alt="Hotel en Europa">
+              <div class="carusel-item_detalles">
+                   <div>
+                     <img src="play.png" alt="Play">
+                     <img src="plus.png" alt="Plus">
+                   </div>
+                    <p class="carusel-item_detalles--titulo">Hoteles Contemporaneos</p>
+                    <p class="carusel-item_detalles--subtitulo">Estadados Unidos</p>
+               </div>
+            </div>
+            <div class="carusel-item">
+                <img class="carusel-item_img" src="ciudad.jpg" alt="Comienzo">
+              <div class="carusel-item_detalles">
+                   <div>
+                     <img src="play.png" alt="Play">
+                     <img src="plus.png" alt="Plus">
+                   </div>
+                    <p class="carusel-item_detalles--titulo">Ciudad</p>
+                    <p class="carusel-item_detalles--subtitulo">Ciudades Nocturnas</p>
+               </div>
+            </div>
+            <div class="carusel-item">
+                <img class="carusel-item_img" src="viaje.jpg" alt="Comienzo">
+              <div class="carusel-item_detalles">
+                   <div>
+                     <img src="play.png" alt="Play">
+                     <img src="plus.png" alt="Plus">
+                   </div>
+                    <p class="carusel-item_detalles--titulo">Vijaes</p>
+                    <p class="carusel-item_detalles--subtitulo">Viajes a todo el mundo</p>
+               </div>
+            </div>
+
+
+
+        </section>
     </section>
     
 </body>
